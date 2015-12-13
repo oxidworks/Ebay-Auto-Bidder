@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{97145b66-ea62-4b6d-8e7b-726ed75efdd4}</ProjectGuid>
+    <ProjectHome />
+    <StartupFile>scraping\EbayPageScraper.py</StartupFile>
+    <SearchPath />
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <ProjectTypeGuids>{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <LaunchProvider>Standard Python launcher</LaunchProvider>
+    <InterpreterId />
+    <InterpreterVersion />
+    <IsWindowsApplication>False</IsWindowsApplication>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition=" '$(VisualStudioVersion)' == '' ">10.0</VisualStudioVersion>
+    <PtvsTargetsFile>$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets</PtvsTargetsFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="browser\TabbedFirefoxDriver.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="config\EbayConfigUtil.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="config\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EbayLogin.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Ebay_Automator.py" />
+    <Compile Include="models\Item.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="models\ItemFactory.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="models\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="scraping\EbayPageScraper.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="scraping\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="models\" />
+    <Folder Include="config\" />
+    <Folder Include="browser\" />
+    <Folder Include="scraping\" />
+  </ItemGroup>
+  <Import Project="$(PtvsTargetsFile)" Condition="Exists($(PtvsTargetsFile))" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="!Exists($(PtvsTargetsFile))" />
+</Project>
