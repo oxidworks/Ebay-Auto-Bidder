@@ -38,6 +38,7 @@ def createConfigFile():
         password = raw_input("\nEnter Ebay password: ")
         parser.set(credentials_section_name, "username", username)
         parser.set(credentials_section_name, "password", password)
+        console.log("Config file can be viewed or modified at " + config_file_path)
         
 
         """
@@ -62,5 +63,14 @@ if not os.path.isfile(config_file_path):
 
 
 
-if __name__ == "__main__":
+
+
+
+
+
+
+def main():
     pass
+
+if __name__ == "__main__":
+    main()
