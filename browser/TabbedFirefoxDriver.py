@@ -29,7 +29,7 @@ class TabbedFirefoxDriver(webdriver.Firefox):
         del self._tab_names[index]
 
         #if we removed the last tab, our tab number goes down, otherwise we are on the same tab position
-        if index == self.getNumTabs()-1:
+        if index > self.getNumTabs():
             self.curr_tab -= 1
 
         

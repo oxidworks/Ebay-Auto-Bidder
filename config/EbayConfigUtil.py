@@ -10,6 +10,22 @@ FILE VARIABLES
 """
 parser = SafeConfigParser()
 credentials_section_name = "Ebay User Credentials"
+config_file_path = "config/config.ini"
+
+
+
+
+"""
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+CALLED WHENEVER ANY FUNCTION IN THE FILE IS CALLED
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+"""
+#Ensure that the config file exists whenever calling any methods in this file
+def run():
+    if not os.path.isfile(config_file_path):
+        createConfigFile()
+
+
 
 
 """
@@ -49,18 +65,16 @@ def createConfigFile():
 
 
 
+
+
+
+
 """
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 CALLED WHENEVER ANY FUNCTION IN THE FILE IS CALLED
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 """
-        
-#Ensure that the config file exists whenever calling any methods in this file
-config_file_path = "config/config.ini"
-if not os.path.isfile(config_file_path):
-    createConfigFile()
-
-
+run()        
 
 
 

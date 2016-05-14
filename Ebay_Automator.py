@@ -5,6 +5,8 @@ including browser automation, login and storage of credentials, and automated bi
 """
 
 from selenium import webdriver
+from scraping import EbayPageScraper
+from models import AuctionItem
 
 class EbayBot():
     
@@ -44,5 +46,11 @@ class EbayBot():
     ************************************************
     """
     def __add_item_from_URL(self, url):
-        name = "HELLO"
-        item_info[name] = name
+        scraper = EbayPageScraper()
+        descrip = scraper.getDescription()
+        end_time = scraper.getEndTime()
+        curr_price = scraper.getCurrentPrice()
+
+        item = AuctionItem(descrip, scraper.URL, end_time, curr_price)
+
+        return scraper, item
